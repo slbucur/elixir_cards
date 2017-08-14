@@ -10,30 +10,21 @@ defmodule Cards do
   Cards.create_deck => returns ["Ace", "Two", "Three"]
   """
   def create_deck do
-    ["Ace", "Two", "Three"]
+    values = ["Ace", "Two", "Three", "Four", "Five"]
+    suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
+
+    for suit <- suits, value <- values do
+      "#{value} of #{suit}"
+    end
+
   end
 
   def shuffle(deck) do
-    if length(deck) <= 1 do
-      deck
-    else
-      {elem, rem} = List.pop_at(deck, :rand.uniform(length(deck) - 1))
-      [elem | shuffle(rem)]
-    end
-
+    Enum.shuffle(deck)
   end
 
-  def contains(deck, card) do
-    if length(deck) == 0 do
-      false
-      else
-        [head | tail] = deck
-        if head == card do
-          true
-        else
-          contains(tail, card)
-        end
-    end
+  def contains?(deck, card) do
+    Enum.member?(deck, card)
   end
 
 end
