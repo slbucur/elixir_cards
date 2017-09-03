@@ -1,0 +1,365 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.16.3">
+    <title>Cards – cards v0.1.0</title>
+    <link rel="stylesheet" href="dist/app-5b9e160cec.css" />
+    
+    <script src="dist/sidebar_items-d3e9bb2ad8.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+    <div class="main">
+<button class="sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="api-reference.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        cards
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.1.0
+      </h2>
+    </div>
+    
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">cards v0.1.0</small>
+        Cards
+        
+      </h1>
+
+      
+        <section id="moduledoc">
+          <p>Provides methods for creating and handling a deck of cards</p>
+<h2 id="module-example-usage" class="section-heading">
+  <a href="#module-example-usage" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Example usage
+</h2>
+
+<pre><code class="iex elixir">iex&gt; deck = Cards.create_deck
+iex&gt; {hand, _deck} = Cards.deal(deck, 1)
+iex&gt; hand
+[&quot;Ace of Spades&quot;]</code></pre>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#contains?/2">contains?(deck, card)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Checks if a deck contains a card</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_deck/0">create_deck()</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Creates an array that represents a deck of cards</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_hand/1">create_hand(hand_size)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Creates a deck, shuffles it, and deals one hand of <code class="inline">hand_size</code></p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deal/2">deal(deck, hand_size)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Takes <code class="inline">hand_size</code> cards out of the deck and returns two arrays</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#load/1">load(filename)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Loads a binary saved deck from disk</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#save/2">save(deck, filename)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Saves a deck to disk in binary format</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#shuffle/1">shuffle(deck)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Shuffles a deck randomly</p>
+</div>
+  
+</div>
+
+  </div>
+
+
+          
+
+        </section>
+      
+
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="contains?/2">
+  
+  
+  <div class="detail-header">
+    <a href="#contains?/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">contains?(deck, card)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>  Checks if a deck contains a card</p>
+<p>  ## Examples</p>
+<pre><code class="iex elixir">iex&gt; deck = Cards.create_deck
+  iex&gt; Cards.contains?(deck, &quot;Ace of Spades&quot;)
+  true</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="create_deck/0">
+  
+  
+  <div class="detail-header">
+    <a href="#create_deck/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">create_deck()</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>  Creates an array that represents a deck of cards</p>
+<p>  ## Examples</p>
+<pre><code class="iex elixir">iex&gt; Cards.create_deck
+[&quot;Ace of Spades&quot;, &quot;Two of Spades&quot;, &quot;Three of Spades&quot;, &quot;Four of Spades&quot;,
+&quot;Five of Spades&quot;, &quot;Ace of Clubs&quot;, &quot;Two of Clubs&quot;, &quot;Three of Clubs&quot;,
+&quot;Four of Clubs&quot;, &quot;Five of Clubs&quot;, &quot;Ace of Hearts&quot;, &quot;Two of Hearts&quot;,
+&quot;Three of Hearts&quot;, &quot;Four of Hearts&quot;, &quot;Five of Hearts&quot;, &quot;Ace of Diamonds&quot;,
+&quot;Two of Diamonds&quot;, &quot;Three of Diamonds&quot;, &quot;Four of Diamonds&quot;, &quot;Five of Diamonds&quot;]</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="create_hand/1">
+  
+  
+  <div class="detail-header">
+    <a href="#create_hand/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">create_hand(hand_size)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Creates a deck, shuffles it, and deals one hand of <code class="inline">hand_size</code></p>
+
+  </section>
+</div>
+<div class="detail" id="deal/2">
+  
+  
+  <div class="detail-header">
+    <a href="#deal/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">deal(deck, hand_size)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>  Takes <code class="inline">hand_size</code> cards out of the deck and returns two arrays:</p>
+<ul>
+<li>one with <code class="inline">hand_size</code> cards
+</li>
+<li>another one with the remaining deck
+</li>
+</ul>
+<h2 id="deal/2-examples" class="section-heading">
+  <a href="#deal/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="iex elixir">iex&gt; deck = Cards.create_deck
+iex&gt; {hand, _deck} = Cards.deal(deck, 1)
+iex&gt; hand
+[&quot;Ace of Spades&quot;]</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="load/1">
+  
+  
+  <div class="detail-header">
+    <a href="#load/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">load(filename)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Loads a binary saved deck from disk.</p>
+
+  </section>
+</div>
+<div class="detail" id="save/2">
+  
+  
+  <div class="detail-header">
+    <a href="#save/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">save(deck, filename)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Saves a deck to disk in binary format</p>
+
+  </section>
+</div>
+<div class="detail" id="shuffle/1">
+  
+  
+  <div class="detail-header">
+    <a href="#shuffle/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">shuffle(deck)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>  Shuffles a deck randomly</p>
+
+  </section>
+</div>
+
+        </section>
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.3),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-da04b39d0c.js"></script>
+  
+  </body>
+</html>
+
