@@ -2,7 +2,7 @@ defmodule CardsTest do
   use ExUnit.Case
   doctest Cards
 
-  test "deck is created" do
+  test "deck is created with 20 cards" do
     assert length(Cards.create_deck) == 5 * 4
   end
 
